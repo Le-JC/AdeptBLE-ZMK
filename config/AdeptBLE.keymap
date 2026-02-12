@@ -67,7 +67,7 @@
       display-name = "Scroll-Keep";
       bindings = <
         &trans &trans &to DEFAULT &to DEFAULT
-        &trans                    &to DEFAULTlth
+        &trans                    &to DEFAULT
       >;
     };
     device_layer {
