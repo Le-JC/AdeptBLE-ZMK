@@ -23,7 +23,7 @@
     };
   };
   behaviors {
-    ltm: layer-tap-momentary {
+    ltm: layer-tap-momentary {lth
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-preferred";
@@ -39,7 +39,7 @@
       bindings = <&mo>, <&mkp>;
     };
     mto: momentary-or-toggle {
-      compatible = "zmk,behavior-hold-tap";
+      compatible = "zmk,behavior-hold-tap";lth
       #binding-cells = <2>;
       flavor = "hold-preferred";
       hold-while-undecided;
@@ -52,22 +52,22 @@
     default_layer {
       display-name = "Default";
       bindings = <
-        &ltm BLTH MB4 &ltm DEVICE MB5 &mkp MCLK &lth SCRLM RCLK
-        &mkp LCLK                               &mto SCRLM SNIPE
+        &ltm BLTH MB4 &ltm DEVICE MB5 &mto SCRLM SNIPE &mkp RCLK
+        &mkp LCLK                                      &mkp MCLK
       >;
     };
     scroll_tap_layer {
       display-name = "Scroll-Momentary";
       bindings = <
-        &trans &trans &to SCRLH &trans
-        &to SCRLH               &trans
+        &trans &trans &trans &to SCRLH
+        &trans               &trans
       >;
     };
     scroll_hold_layer {
       display-name = "Scroll-Keep";
       bindings = <
-        &trans &trans &trans &to DEFAULT
-        &trans               &to DEFAULT
+        &trans &trans &to DEFAULT &to DEFAULT
+        &trans                    &to DEFAULTlth
       >;
     };
     device_layer {
@@ -80,15 +80,15 @@
     bluetooth_layer {
       display-name = "Bluetooth";
       bindings = <
-        &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
-        &bt BT_SEL 3                     &bt BT_SEL 4
+        &trans &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+        &bt BT_SEL 0                     &bt BT_SEL 4
       >;
     };
     snipe_layer {
       display-name = "Snipe";
       bindings = <
-        &trans &trans &trans &lth SCRLM RCLK
-        &trans               &to DEFAULT
+        &trans &trans &mto SCRLM DEFAULT &trans
+        &trans                      &to DEFAULT
       >;
     };
   };
