@@ -23,7 +23,7 @@
     };
   };
   behaviors {
-    ltm: layer-tap-momentary {lth
+    ltm: layer-tap-momentary {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "tap-preferred";
@@ -39,7 +39,7 @@
       bindings = <&mo>, <&mkp>;
     };
     mto: momentary-or-toggle {
-      compatible = "zmk,behavior-hold-tap";lth
+      compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "hold-preferred";
       hold-while-undecided;
